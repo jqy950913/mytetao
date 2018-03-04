@@ -16,6 +16,9 @@ $(function(){
             min:2,
             max:6,
             message:'长度应该在2~6位'
+          },
+          callback: {
+            message:'用户名错误'
           }
         }
       },
@@ -28,6 +31,10 @@ $(function(){
             min:6,
             max:12,
             message:'长度应该在6~12位'
+          },
+          //专门用来提示信息
+          callback: {
+            message:'密码错误'
           }
         }
       }
