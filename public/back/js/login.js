@@ -51,12 +51,24 @@ $(function(){
       data: $("form").serialize(),
       dataType:'json',
       success:function (info) {
-        console.log(info);
+        //console.log(info);
+        if(info.error === 1000){
+          $("form").data("bootstrapValidator").updateStatus("username", "INVALID", "callback");
+        }
+        if(info.error === 1001){
+          $("form").data("bootstrapValidator").updateStatus("password", "INVALID", "callback");
+        }
+        if(info.success) {
+          location.href = "index.html";
+        }
       }
     })
   })
 
-
+//3. 重置表单， 清除所有的样式
+  $("[type='reset']").on("click",function(){
+    $('form').data('bootstrapValidator').resetForm(true);
+  })
 
 
 });
