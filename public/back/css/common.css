@@ -135,3 +135,9 @@ a:link, a:visited, a:hover, a:active {
   height: 400px;
 }
 
+/*表格样式*/
+.table.table-bordered th,
+.table.table-bordered  td{
+  text-align: center;
+  vertical-align:middle;
+}
