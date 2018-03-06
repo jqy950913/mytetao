@@ -42,18 +42,18 @@ $('.icon_menu').on('click',function(){
 //退出功能
 $('.icon_logout').on('click',function(){
   $("#logoutModal").modal("show");
+});
 
-  //给退出按钮注册事件, off:解绑所有的事件
-  $('.btn_logout').on('click',function(){
-    $.ajax({
-      type:'get',
-      url:"/employee/employeeLogout",
-      success:function(info){
-        console.log(info);
-        if(info.success){
-          location.href="login.html";
-        }
+//给退出按钮注册事件, off:解绑所有的事件
+$('.btn_logout').on('click',function(){
+  $.ajax({
+    type:'get',
+    url:"/employee/employeeLogout",
+    success:function(info){
+      console.log(info);
+      if(info.success){
+        location.href="login.html";
       }
-    })
+    }
   })
 })

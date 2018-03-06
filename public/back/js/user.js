@@ -42,6 +42,29 @@ $(function(){
     $("#userModal").modal("show")
 
     //获取到点击的按钮所在的用户的id
-    //var id=$(this).
-  })
+    var id=$(this).parent().data('id');
+    //console.log(id);
+    var isDelete=$(this).hasClass('btn-success')?1:0;
+
+    //点击确认按钮重新渲染
+    $('.btn_confirm').off().on('click',function(){
+      $.ajax({
+        type:'POST',
+        url:'/user/updateUser',
+        data:{
+          id:id,
+          isDelete:isDelete
+        },
+        success:function(info){
+          //console.log(info);
+          if(info.success){
+            $('#userModal').modal('hide');
+            render();
+          }
+        }
+      })
+    })
+  });
+
+
 })

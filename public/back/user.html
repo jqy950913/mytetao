@@ -113,7 +113,7 @@
     <td>{{v.username}}</td>
     <td>{{v.mobile}}</td>
     <td>{{v.isDelete===1?'正常':'禁用'}}</td>
-    <td>
+    <td  data-id={{v.id}}>
       {{if v.isDelete===0}}
       <button class="btn btn-success btn-sm">启用</button>
       {{/if}}

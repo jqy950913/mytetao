@@ -78,9 +78,19 @@ img{
   float: left;
   width: 25%;
   text-align: center;
-  line-height: 55px;
+  padding-top:8px;
 }
 .lt_footer li a{
   color:#fff;
 }
-.lt_footer li
+.lt_footer li a p{
+  color:#fff;
+  font-size: 12px;
+  margin: 0;
+}
+.lt_footer li.now a{
+  color:darkorange;
+}
+.lt_footer li.now p{
+  color:darkorange;
+}
