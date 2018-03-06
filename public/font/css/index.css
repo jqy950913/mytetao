@@ -1,0 +1,30 @@
+/*导航*/
+.nav{
+  padding:10px;
+}
+.nav li{
+  float: left;
+  width: 33.33%;
+}
+/*商品*/
+.product{
+  padding:10px;
+}
+.product a{
+  display: block;
+  width: 48%;
+  float: left;
+  border: 1px solid #ccc;
+  padding:10px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.product a:nth-child(odd){
+  margin-right:4%;
+}
+.product .price{
+  color:red;
+}
+.product .oldPrice{
+  text-decoration: line-through;
+}
