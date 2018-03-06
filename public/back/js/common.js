@@ -15,6 +15,7 @@ $(function(){
     NProgress.done();
   },500)
 })
+
 //非登陆页面，判断当前用户是否是登录了，如果登录了，就继续，如果没登陆，需要跳转到登录页面。
 if(location.href.indexOf("login.html") == -1){
   $.ajax({
@@ -37,7 +38,7 @@ $('.icon_menu').on('click',function(){
   $('.lt_aside').toggleClass('now');
   $('.lt_topbar').toggleClass('now');
   $('.lt_main').toggleClass('now');
-})
+});
 
 //退出功能
 $('.icon_logout').on('click',function(){
