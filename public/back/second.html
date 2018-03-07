@@ -9,7 +9,6 @@
   <link rel="stylesheet" href="css/common.css">
 </head>
 <body>
-
 <!--侧边栏-->
 <div class="lt_aside">
   <div class="brand">
@@ -33,8 +32,8 @@
           分类管理
         </a>
         <div class="child" style="display: block">
-          <a  href="first.html" class="now">一级分类</a>
-          <a href="second.html">二级分类</a>
+          <a  href="first.html">一级分类</a>
+          <a href="second.html"  class="now">二级分类</a>
         </div>
       </li>
       <li>
@@ -60,7 +59,7 @@
     <ol class="breadcrumb">
       <li><a href="#">管理系统</a></li>
       <li><a href="#">分类管理</a></li>
-      <li class="active">一级分类</li>
+      <li class="active">二级分类</li>
     </ol>
     <!--导航下面-->
     <div class="lt_content">
@@ -69,12 +68,14 @@
       <table class="table table-bordered mb_20">
         <thead>
         <tr>
-          <td width="20%">序号</td>
-          <td width="80%">分类名称</td>
+          <td width="10%">序号</td>
+          <td width="30%">一级分类名称</td>
+          <td width="30%">二级分类名称</td>
+          <td width="30%">二级分类LOGO</td>
         </tr>
         </thead>
         <tbody>
-       <!--挖坑-->
+        <!--挖坑-->
         </tbody>
       </table>
       <!--分页标签， 只要一个ul.指定id-->
@@ -82,12 +83,8 @@
         <ul id="paginator"></ul>
       </div>
     </div>
- </div>
+  </div>
 </div>
-
-
-
-
 
 <!--退出模态框-->
 <div class="modal fade" tabindex="-1" id="logoutModal">
@@ -111,9 +108,8 @@
   </div>
 </div>
 
-
 <!--添加分类模态框-->
-<div class="modal fade" id="firstModal" tabindex="-1">
+<div class="modal fade" id="secondModal" tabindex="-1">
   <div class="modal-dialog modal-sm">
     <div class="modal-content">
       <div class="modal-header">
@@ -122,11 +118,33 @@
       </div>
       <form id="form">
         <div class="modal-body">
-
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="请输入一级分类的名称" name="categoryName">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown" >
+                <span class="dropdown_text">请选择一级分类</span>
+                <span class="caret"></span>
+              </button>
+              <ul class="dropdown-menu" >
+               <!--挖坑-->
+              </ul>
+              <input type="hidden" name='categoryId'>
+            </div>
           </div>
+          <div class="form-group">
+            <input type="text" autocomplete="off" class="form-control" placeholder="请输入二级分类的名称" name="brandName">
+          </div>
+          <div class="form-group">
+            <div class="file_box">
+              <label for="fileupload" class="btn btn-default">上传图片</label>
+              <input type="file" style="display: none" id="fileupload" class="btn btn-default" name="pic1" data-url="/category/addSecondCategoryPic">
+            </div>
+          </div>
+          <div class="form-group img_box">
+            <img src="images/none.png" width="100px" height="100px" alt="">
 
+            <input type="hidden" name="brandLogo">
+            <input type="hidden" name="hot" value="1">
+          </div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
@@ -137,20 +155,28 @@
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
 
-
 <!--模版-->
 <script type="text/html" id="tpl">
   {{each rows v i}}
   <tr>
-    <td>{{(page-1)*size+i+1}}</td>
+    <td>{{(page-1)*5+i+1}}</td>
     <td>{{v.categoryName}}</td>
+    <td>{{v.brandName}}</td>
+    <td><img src="{{v.brandLogo?v.brandLogo:'images/none.png'}}" alt="" width="50px"></td>
   </tr>
   {{/each}}
 </script>
 
+<script type="text/html" id="tpl2">
+  {{each rows v i}}
+  <li data-id={{v.id}}><a href="javascript:;">{{v.categoryName}}</a></li>
+  {{/each}}
+</script>
 
 
 <script src="lib/jquery/jquery.min.js"></script>
+<script src="lib/jquery-fileupload/jquery.ui.widget.js"></script>
+<script src="lib/jquery-fileupload/jquery.fileupload.js"></script>
 <script src="lib/bootstrap/js/bootstrap.min.js"></script>
 <script src="lib/bootstrap-validator/js/bootstrapValidator.min.js"></script>
 <script src="lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
@@ -158,6 +184,6 @@
 <!--1. 引入js文件-->
 <script src="lib/artTemplate/template-web.js"></script>
 <script src="js/common.js"></script>
-<script src="js/first.js"></script>
+<script src="js/second.js"></script>
 </body>
 </html>
