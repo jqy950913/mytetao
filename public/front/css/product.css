@@ -1,0 +1,41 @@
+@charset "UTF-8";
+
+.item {
+  padding: 10px;
+  border-top: 1px solid #ccc;
+}
+
+
+.item .price {
+  color: red;
+}
+
+.item .oldPrice {
+  text-decoration: line-through;
+  font-size: 12px;
+}
+
+.size span {
+  border: 1px solid red;
+  background-color: #f5f5f5;
+  line-height: 30px;
+  font-size: 12px;
+  padding: 5px;
+}
+
+.num .tips {
+  font-size: 12px;
+  color: #666;
+}
+
+
+.lt_cart {
+  width: 100%;
+  position: absolute;
+  height: 55px;
+  bottom: 0px;
+  left: 0;
+  background-color: #eee;
+  padding-top: 10px;
+  border-top: 1px solid red;
+}

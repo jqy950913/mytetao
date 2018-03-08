@@ -1,0 +1,37 @@
+@charset "UTF-8";
+
+
+.lt_history {
+  padding: 10px;
+  font-size: 12px;
+  color: #666;
+}
+
+
+.lt_history .title {
+  height: 21px;
+  line-height: 21px;
+}
+
+.lt_history .title .btn_empty {
+  height: 21px;
+  line-height: 21px;
+}
+
+.lt_history .content ul {
+  border: 1px dashed red;
+  border-bottom: none;
+}
+
+.lt_history .content li {
+  height: 30px;
+  line-height: 30px;
+  border-bottom: 1px dashed red;
+  padding-left: 10px;
+}
+
+.lt_history .content .btn_delete {
+  height: 30px;
+  line-height: 30px;
+}
+

@@ -1,0 +1,13 @@
+@charset "UTF-8";
+
+
+.nav {
+  padding: 10px;
+}
+.nav li {
+  float: left;
+  width: 33.33%;
+}
+
+
+
